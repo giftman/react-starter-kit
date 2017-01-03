@@ -1,4 +1,4 @@
-FROM node:7.2.1-alpine
+FROM node:7.2-wheezy
 
 RUN npm install -g yarn
 RUN mkdir -p /usr/src/app
