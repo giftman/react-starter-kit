@@ -5,6 +5,7 @@ RUN mkdir -p /usr/src/app
 COPY . /usr/src/app
 WORKDIR /usr/src/app
 RUN yarn
+RUN npm install -g node-gyp
 RUN yarn run build --release
 # Copy applicaiton files
 
