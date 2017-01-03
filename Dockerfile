@@ -1,10 +1,10 @@
 FROM node:7.2.1-alpine
 
 RUN npm install -g yarn
-RUN npm install -g babel-cli
 RUN mkdir -p /usr/src/app
 COPY . /usr/src/app
 WORKDIR /usr/src/app
+RUN yarn
 RUN yarn run build --release
 # Copy applicaiton files
 
