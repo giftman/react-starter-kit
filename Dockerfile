@@ -1,7 +1,7 @@
 FROM node:7.2.1-alpine
 
-RUN yarn run build --release
 RUN npm install -g yarn
+RUN yarn run build --release
 # Copy applicaiton files
 COPY ./build /usr/src/app
 WORKDIR /usr/src/app
