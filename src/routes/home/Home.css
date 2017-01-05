@@ -10,30 +10,276 @@
 @import '../../components/variables.css';
 
 .root {
-  padding-left: 20px;
-  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 0 40px;
+.welcome {
   max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 484px;
 }
 
-.news {
-  padding: 0;
+.welcomeTitle {
+  font-size: 2.75em;
+  font-weight: 400;
+  color: #141720;
 }
 
-.newsItem {
-  list-style-type: none;
-  padding-bottom: 6px;
+.welcomeDes {
+  font-size: 20px;
+  color: rgba(93, 95, 101, 0.6);
+  padding: 10px;
+  padding-bottom: 20px;
 }
 
-.newsTitle {
-  font-size: 1.125em;
+.welcomeBtnContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.newsTitle,
-.newsDesc {
-  display: block;
+.welcomeTitle:hover,
+.welcomeDes:hover {
+  color: #4b4b4b;
+}
+
+.aboutus {
+  min-width: 1440px;
+  display: flex;
+  flex-direction: row;
+  height: 550px;
+  background-color: #d8d8d8;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.aboutLeft {
+  display: flex;
+  flex: 1;
+  background-color: #0a1331;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.aboutContainer {
+  display: flex;
+  background-color: #0a1331;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.aboutDes {
+  font-size: 20px;
+  color: rgba(93, 95, 101, 0.6);
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  padding-bottom: 20px;
+  max-width: 500px;
+}
+
+.aboutRight {
+  display: flex;
+  flex: 1;
+}
+
+.aboutTitle {
+  color: #fff;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  font-size: 20px;
+  display: flex;
+}
+
+.aboutBtn {
+  display: flex;
+  align-self: center;
+}
+
+.img {
+  display: flex;
+  flex: 1;
+  background-image: url('/img/about.png');
+}
+
+.products {
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 603px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.productsUp {
+  display: flex;
+}
+
+.productsMid {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.productCell {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.productImg {
+  padding: 15px;
+  width: 108px;
+  height: 92px;
+}
+
+.productCellInfo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.productCellTitle {
+  color: #57ad68;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.productCellDes {
+  max-width: 387px;
+  min-width: 200px;
+}
+
+.service {
+  min-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 630px;
+  background-color: #efefef;
+}
+
+.serviceUp {
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.serviceDown {
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.serviceCell {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.serviceCellTitle {
+  color: #141720;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.serviceCellDes {
+  width: 300px;
+  font-size: 20px;
+  color: #5d5f65;
+}
+
+.serviceImg {
+  padding: 15px;
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .welcomeTitle {
+    font-size: 1.2em;
+  }
+
+  .welcomeDes {
+    font-size: 18px;
+    padding: 15px;
+    padding-bottom: 10px;
+  }
+
+  .aboutus {
+    min-width: 480px;
+    height: auto;
+  }
+
+  .img {
+    min-width: 300px;
+    height: auto;
+    height: 400px;
+  }
+
+  .aboutLeft {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .aboutContainer {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .aboutDes {
+    font-size: 16px;
+    padding-bottom: 10px;
+    width: 320px;
+  }
+
+  .productImg {
+    padding: 10px;
+    width: 54px;
+    height: 46px;
+  }
+
+  .productCellTitle {
+    font-size: 18px;
+  }
+
+  .productCellDes {
+    max-width: 320px;
+    min-width: 150px;
+  }
+
+  .service {
+    min-width: 480px;
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 }
