@@ -21,16 +21,17 @@ class Footer extends React.Component {
         <div className={s.upDown}>
           <div className={s.container}>
             <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} width="38" height="38" alt="React" />
-            <span className={s.spacer}>© React</span>
+            <span className={s.spacer}>领创</span>
             <div className={s.padding} />
             <div className={s.textContainer}>
-              <span className={s.spacer}>Mese Selimovica, 52 78000, Banja Luka BiH</span>
+              <span className={s.spacer}>广东省广州市海珠区新港西路135号
+              中山大学国家大学科技园B座</span>
             </div>
 
             <div className={s.padding} />
 
             <div className={s.textContainer}>
-              <span className={s.spacer}>+8613760752289 email@examplecom</span>
+              <span className={s.spacer}>+8613760752289 chufan617@gmail.com</span>
             </div>
             <div className={s.padding} />
 

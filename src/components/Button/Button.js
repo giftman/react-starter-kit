@@ -21,12 +21,12 @@ class Button extends React.Component {
     btnSty: PropTypes.string,
     className: PropTypes.string,
     // children: PropTypes.node,
-    // onClick: PropTypes.func,
+    onClick: PropTypes.func,
   };
 
 
   render() {
-    const { to, title } = this.props;
+    const { to, title, onClick } = this.props;
     let content;
     if (this.props.btnSty && this.props.btnSty === 'bordered') {
       content = (<div className={s.container}>
@@ -43,7 +43,7 @@ class Button extends React.Component {
         </div>
       );
     }
-    return (<Link className={s.link} to={to}>
+    return (<Link className={s.link} to={to} onClick={onClick}>
       {content}
     </Link>);
   }
