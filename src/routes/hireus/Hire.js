@@ -11,6 +11,7 @@ import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Hire.css';
 import Button from '../../components/Button';
+import fetch from '../../core/fetch';
 
 class Hire extends React.Component {
   static propTypes = {
@@ -32,13 +33,34 @@ class Hire extends React.Component {
     };
 
     // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onClick() {
+  handleSubmit() {
     // console.log('click');
     const { contact } = this.state;
-    console.log(contact);
+    // console.log(contact);
+    fetch('/hireus', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contact),
+      credentials: 'include',
+    }).then((response) => {
+      if ((response.status === 200 || response.status === 201)) {
+        return response.json();
+      }
+      throw (response);
+    })
+    .then((json) => {
+      // let resData = JSON.parse(json);
+      console.log(json);
+    })
+    .catch((error) => {
+      throw (error);
+    });
   }
 
   handleChange(event, name) {
@@ -110,7 +132,7 @@ class Hire extends React.Component {
                 onChange={(value) => { this.handleChange(value, 'from'); }}
               />
             </div>
-            <Button to="#" title="确认" onClick={this.onClick()} />
+            <Button to="#" title="确认" onClick={this.handleSubmit} />
           </div>
         </div>
       </div>

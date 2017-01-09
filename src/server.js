@@ -24,7 +24,7 @@ import Html from './components/Html';
 import { ErrorPageWithoutStyle } from './routes/error/ErrorPage';
 import errorPageStyle from './routes/error/ErrorPage.css';
 import passport from './core/passport';
-import models from './data/models';
+import models, { Hireus } from './data/models';
 import schema from './data/schema';
 import routes from './routes';
 import assets from './assets'; // eslint-disable-line import/no-unresolved
@@ -72,6 +72,20 @@ app.get('/login/facebook/return',
     res.redirect('/');
   },
 );
+
+app.post('/hireus', async (req, res) => {
+  // console.log(req.body);
+  Hireus.create(req.body)
+  .then((employee) => {
+    console.log(employee);
+    res.send('{"msg":"ok"}');
+  })
+  .catch((err) => {
+    console.log(err);
+    res.send('{"msg":"unkonw error"}');
+  });
+  // res.send('{"msg":"ok"}');
+});
 
 //
 // Register API middleware
