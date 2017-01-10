@@ -12,12 +12,14 @@ import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.css';
 import Button from '../../components/Button';
-import cellImg from './cellimg.png';
 import serviceImg from './service.png';
+
+const products = require('./products.json');
 
 class Home extends React.Component {
 
   render() {
+    console.log(products);
     return (
       <div className={s.root}>
         <div className={s.welcome}>
@@ -28,8 +30,8 @@ class Home extends React.Component {
             App客户端以及网站系统开发。更提供有价值以及思想的营销推广解决方案以及相关资源对接。
             </span>
           <div className={s.welcomeBtnContainer}>
-            <Button to="/" title="详询" btnSty="bordered" />
-            <Button to="/" title="更多" />
+            <Button to="/hireus" title="详询" btnSty="bordered" />
+            <Button to="/#products" title="更多" />
           </div>
         </div>
         <div className={s.aboutus}>
@@ -45,7 +47,7 @@ class Home extends React.Component {
                   生活服务APP等多款精品手机APP应用，积累了大量自主研发的技术成果。
                   并且在智慧城市方面也有所项目参与。
               </span>
-              <Button to="/" title="更多" className={s.aboutBtn} />
+              <Button to="/about" title="更多" className={s.aboutBtn} />
             </div>
           </div>
           <div className={s.aboutRight} >
@@ -57,51 +59,21 @@ class Home extends React.Component {
             <span className={s.welcomeTitle}>WE BUILD BEST PRODUCTS</span>
           </div>
           <div className={s.productsMid}>
-            <div className={s.productCell}>
-              <img src={cellImg} className={s.productImg} alt="img" />
-              <div className={s.productCellInfo}>
-                <span className={s.productCellTitle}>Manage Sites Easily</span>
-                <span className={s.productCellDes}>Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit,
-                          sed do eiusmod tempor incididunt ut labore et
-                           dolore magna aliqua.</span>
-              </div>
-            </div>
-            <div className={s.productCell}>
-              <img src={cellImg} className={s.productImg} alt="img" />
-              <div className={s.productCellInfo}>
-                <span className={s.productCellTitle}>Manage Sites Easily</span>
-                <span className={s.productCellDes}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                          sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.</span>
-              </div>
-            </div>
-            <div className={s.productCell}>
-              <img src={cellImg} className={s.productImg} alt="img" />
-              <div className={s.productCellInfo}>
-                <span className={s.productCellTitle}>Manage Sites Easily</span>
-                <span className={s.productCellDes}>Lorem ipsum dolor sit amet,
-                 consectetur adipisicing elit,
-                          sed do eiusmod tempor incididunt ut labore
-                           et dolore magna aliqua.</span>
-              </div>
-            </div>
-            <div className={s.productCell}>
-              <img src={cellImg} className={s.productImg} alt="img" />
-              <div className={s.productCellInfo}>
-                <span className={s.productCellTitle}>Manage Sites Easily</span>
-                <span className={s.productCellDes}>Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit,
-                          sed do eiusmod tempor incididunt ut
-                          labore et dolore magna aliqua.</span>
-              </div>
-            </div>
-
+            {
+              products.map((product, index) =>
+                (<div key={index} className={s.productCell}>
+                  <img src={product.thumb} className={s.productImg} alt="img" />
+                  <div className={s.productCellInfo}>
+                    <span className={s.productCellTitle}>{product.name}</span>
+                    <span className={s.productCellDes}>{product.des}</span>
+                  </div>
+                </div>),
+              )
+          }
           </div>
           <Button to="/" title="MORE CASE" className={s.aboutBtn} />
         </div>
-        <div className={s.service}>
+        <div id="service" className={s.service}>
           <div className={s.serviceUp}>
             <span className={s.welcomeTitle}>OUR SERVICES</span>
           </div>
