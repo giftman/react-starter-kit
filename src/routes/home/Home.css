@@ -149,6 +149,7 @@
   padding: 15px;
   width: 108px;
   height: 92px;
+  object-fit: contain;
 }
 
 .productCellInfo {
