@@ -13,6 +13,7 @@ import s from './Footer.css';
 // import Link from '../Link';
 import logoUrl from '../Header/logo-small.png';
 import logoUrl2x from '../Header/logo-small@2x.png';
+import qrcode from './qrcode.jpg';
 
 class Footer extends React.Component {
   render() {
@@ -36,7 +37,7 @@ class Footer extends React.Component {
             <div className={s.padding} />
 
             <div >
-              <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} width="50" height="50" alt="React" />
+              <img src={qrcode} width="144" height="144" alt="React" />
             </div>
           </div>
           <div className={s.text}>2016 © LingChuangTech. All rights reserved</div>
