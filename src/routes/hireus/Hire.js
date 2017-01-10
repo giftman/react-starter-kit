@@ -75,7 +75,7 @@ class Hire extends React.Component {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <img className={s.img} alt="img" />
+          <img className={s.img} role="presentation" />
           <div className={s.quote}>
             <div className={s.title}>Hire us to help you build excellent software</div>
             <div className={s.quoteEle}>

@@ -51,7 +51,7 @@ class Home extends React.Component {
             </div>
           </div>
           <div className={s.aboutRight} >
-            <img className={s.img} alt="img" />
+            <img className={s.img} role="presentation" />
           </div>
         </div>
         <div id="products" className={s.products}>
@@ -71,7 +71,7 @@ class Home extends React.Component {
               )
           }
           </div>
-          <Button to="/" title="MORE CASE" className={s.aboutBtn} />
+          <Button to="/products" title="MORE CASE" className={s.aboutBtn} />
         </div>
         <div id="service" className={s.service}>
           <div className={s.serviceUp}>

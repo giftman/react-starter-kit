@@ -39,7 +39,7 @@ class Footer extends React.Component {
               <img src={logoUrl} srcSet={`${logoUrl2x} 2x`} width="50" height="50" alt="React" />
             </div>
           </div>
-          <div className={s.text}>2016 © Nippy Studio. All rights reserved</div>
+          <div className={s.text}>2016 © LingChuangTech. All rights reserved</div>
         </div>
       </div>
     );
