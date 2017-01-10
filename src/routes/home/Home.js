@@ -12,9 +12,9 @@ import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.css';
 import Button from '../../components/Button';
-import serviceImg from './service.png';
 
 const products = require('./products.json');
+const services = require('./services.json');
 
 class Home extends React.Component {
 
@@ -78,42 +78,15 @@ class Home extends React.Component {
             <span className={s.welcomeTitle}>OUR SERVICES</span>
           </div>
           <div className={s.serviceDown}>
-            <div className={s.serviceCell}>
-              <img src={serviceImg} className={s.serviceImg} alt="img" />
-              <div className={s.serviceCellTitle}>Consectetur vestibulum</div>
-              <div className={s.serviceCellDes}>Consectetur vestibulum maecenas curabitur
-              hac felis vestibulum urna velit parturient suspendisse a ad lacus mauris</div>
-            </div>
-            <div className={s.serviceCell}>
-              <img src={serviceImg} className={s.serviceImg} alt="img" />
-              <div className={s.serviceCellTitle}>Consectetur vestibulum</div>
-              <div className={s.serviceCellDes}>Consectetur vestibulum maecenas curabitur hac
-               felis vestibulum urna velit parturient suspendisse a ad lacus mauris</div>
-            </div>
-            <div className={s.serviceCell}>
-              <img src={serviceImg} className={s.serviceImg} alt="img" />
-              <div className={s.serviceCellTitle}>Consectetur vestibulum</div>
-              <div className={s.serviceCellDes}>Consectetur vestibulum maecenas curabitur hac
-              felis vestibulum urna velit parturient suspendisse a ad lacus mauris</div>
-            </div>
-            <div className={s.serviceCell}>
-              <img src={serviceImg} className={s.serviceImg} alt="img" />
-              <div className={s.serviceCellTitle}>Consectetur vestibulum</div>
-              <div className={s.serviceCellDes}>Consectetur vestibulum maecenas curabitur hac
-               felis vestibulum urna velit parturient suspendisse a ad lacus mauris</div>
-            </div>
-            <div className={s.serviceCell}>
-              <img src={serviceImg} className={s.serviceImg} alt="img" />
-              <div className={s.serviceCellTitle}>Consectetur vestibulum</div>
-              <div className={s.serviceCellDes}>Consectetur vestibulum maecenas curabitur hac
-               felis vestibulum urna velit parturient suspendisse a ad lacus mauris</div>
-            </div>
-            <div className={s.serviceCell}>
-              <img src={serviceImg} className={s.serviceImg} alt="img" />
-              <div className={s.serviceCellTitle}>Consectetur vestibulum</div>
-              <div className={s.serviceCellDes}>Consectetur vestibulum maecenas curabitur hac
-               felis vestibulum urna velit parturient suspendisse a ad lacus mauris</div>
-            </div>
+            {
+              services.map((service, index) =>
+                (<div key={index} className={s.serviceCell}>
+                  <img src={service.thumb} className={s.serviceImg} alt="img" />
+                  <div className={s.serviceCellTitle}>{service.name}</div>
+                  <div className={s.serviceCellDes}>{service.des}</div>
+                </div>),
+                )
+            }
           </div>
         </div>
       </div>
