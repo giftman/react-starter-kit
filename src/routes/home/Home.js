@@ -56,7 +56,7 @@ class Home extends React.Component {
         </div>
         <div id="products" className={s.products}>
           <div className={s.productsUp}>
-            <span className={s.welcomeTitle}>WE BUILD BEST PRODUCTS</span>
+            <span className={s.welcomeTitle}>我们创造最好的产品</span>
           </div>
           <div className={s.productsMid}>
             {
@@ -71,7 +71,7 @@ class Home extends React.Component {
               )
           }
           </div>
-          <Button to="/products" title="MORE CASE" className={s.aboutBtn} />
+          <Button to="/products" title="更多案例" className={s.aboutBtn} />
         </div>
         <div id="service" className={s.service}>
           <div className={s.serviceUp}>
