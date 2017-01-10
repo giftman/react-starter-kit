@@ -10,129 +10,32 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Products.css';
-import Button from '../../components/Button';
-import fetch from '../../core/fetch';
+
+const products = require('../home/products.json');
 
 class Products extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
   };
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      contact: {
-        company: '',
-        name: '',
-        email: '',
-        phone: '',
-        des: '',
-        budge: '',
-        from: '',
-      },
-    };
-
-    // this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit() {
-    // console.log('click');
-    const { contact } = this.state;
-    // console.log(contact);
-    fetch('/hireus', {
-      method: 'post',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(contact),
-      credentials: 'include',
-    }).then((response) => {
-      if ((response.status === 200 || response.status === 201)) {
-        return response.json();
-      }
-      throw (response);
-    })
-    .then((json) => {
-      // let resData = JSON.parse(json);
-      console.log(json);
-    })
-    .catch((error) => {
-      throw (error);
-    });
-  }
-
-  handleChange(event, name) {
-    const { contact } = this.state;
-    contact[name] = event.target.value;
-    this.setState({
-      contact,
-    });
-  }
-
   render() {
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <img className={s.img} alt="img" />
-          <div className={s.quote}>
-            <div className={s.title}>Hire us to help you build excellent software</div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>WHAT IS YOUR COMPANY OR PROJECT NAME?</div>
-              <input
-                className={s.eleInput}
-                value={this.state.contact.company}
-                onChange={(value) => { this.handleChange(value, 'company'); }}
-              />
+          <div id="products" className={s.products}>
+            <div className={s.productsMid}>
+              {
+                products.map((product, index) =>
+                  (<div key={index} className={s.productCell}>
+                    <img src={product.thumb} className={s.productImg} alt="img" />
+                    <div className={s.productCellInfo}>
+                      <span className={s.productCellTitle}>{product.name}</span>
+                      <span className={s.productCellDes}>{product.des}</span>
+                    </div>
+                  </div>),
+                )
+            }
             </div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>WHAT IS YOUR NAME?</div>
-              <input
-                className={s.eleInput}
-                value={this.state.contact.name}
-                onChange={(value) => { this.handleChange(value, 'name'); }}
-              />
-            </div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>WHAT IS YOUR EMAIL ADDRESS?*</div>
-              <input
-                value={this.state.contact.email}
-                onChange={(value) => { this.handleChange(value, 'email'); }}
-              />
-            </div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>WHAT IS YOUR PHONE NUMBER?</div>
-              <input
-                value={this.state.contact.phone}
-                onChange={(value) => { this.handleChange(value, 'phone'); }}
-              />
-            </div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>WHAT CAN THOUGHTBOT DO FOR YOU?</div>
-              <textarea
-                className={s.eleInput} style={{ height: 80 }}
-                value={this.state.contact.des}
-                onChange={(value) => { this.handleChange(value, 'des'); }}
-              />
-            </div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>WHAT IS YOUR BUDGET?</div>
-              <input
-                className={s.eleInput}
-                value={this.state.contact.budge}
-                onChange={(value) => { this.handleChange(value, 'budge'); }}
-              />
-            </div>
-            <div className={s.quoteEle}>
-              <div className={s.eleTitle}>HOW DID YOU HEAR ABOUT THOUGHTBOT?</div>
-              <input
-                className={s.eleInput}
-                value={this.state.contact.from}
-                onChange={(value) => { this.handleChange(value, 'from'); }}
-              />
-            </div>
-            <Button to="#" title="确认" onClick={this.handleSubmit} />
           </div>
         </div>
       </div>

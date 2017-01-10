@@ -18,48 +18,61 @@
   margin: 0 auto;
   padding: 0 0 40px;
   max-width: var(--max-content-width);
-  min-height: 800px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.img {
-  display: flex;
-  flex: 1;
-  min-width: 480px;
   min-height: 400px;
-  background-image: url('http://oeyxehw3i.bkt.clouddn.com / 17 - 1 - 6 / 22629278-file_1483673214243_e187.png');
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.quote {
+.products {
+  max-width: var(--max-content-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.productsMid {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.productCell {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.productImg {
+  padding: 15px;
+  width: 108px;
+  height: 92px;
+  object-fit: contain;
+}
+
+.productCellInfo {
   display: flex;
   flex: 1;
   flex-direction: column;
 }
 
-.title {
-  font-size: 2.5em;
-  color: #db4d4b;
+.productCellTitle {
+  color: #57ad68;
+  font-size: 24px;
   font-weight: 500;
-  padding-bottom: 20px;
-  padding-top: 20px;
 }
 
-.quoteEle {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-bottom: 20px;
-}
-
-.eleTitle {
-  font-size: 0.8em;
-  color: #000;
-  font-weight: 500;
-  padding-bottom: 10px;
-}
-
-.eleInput {
-  min-height: 30px;
+.productCellDes {
+  max-width: 387px;
+  min-width: 200px;
 }

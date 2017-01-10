@@ -11,7 +11,7 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import Products from './Products';
 
-const title = 'Hire Us';
+const title = 'Products';
 
 export default {
 
